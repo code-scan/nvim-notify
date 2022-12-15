@@ -83,9 +83,9 @@ function notify.notify(message, level, opts)
   if not global_instance then
     notify.setup()
   end
-  -- if string.find(message,"Format") then
-  --   return false
-  -- end
+  if string.find(message,"Format") then
+    return false
+  end
 
   return global_instance.notify(message, level, opts)
 end
